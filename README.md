@@ -265,6 +265,7 @@ Notes on the book Clean Architecture: A Craftsman's Guide to Software Structure 
 - When one component uses another, a dependency is created between the components
 - Because of that dependency, every time the used component is changed, the using component will likely need corresponding changes
 - All in all, Don’t depend on things you don’t need
+- ISP at the component level
 
 ## The Tension Diagram for Component Cohesion
 
@@ -296,6 +297,11 @@ Notes on the book Clean Architecture: A Craftsman's Guide to Software Structure 
 ### Eliminating Dependency Cycles
 - The components become units of work that can be the responsibility of a single developer/developers
 - However, you must manage the dependency structure of the components. There can be no cycles
+
+### The Stable Dependencies Principle (SDP)
+- Definition: Depend in the direction of stability
+- Some components are designed to be volatile. We expect them to change
+- Volatile components should not be depended on by components that are difficult to change. If they do, the volatile components will also be difficult to change
 
 # <a name="architecture">15. Architecture</a> 
 - The primary purpose of architecture is to support the life cycle of the system
