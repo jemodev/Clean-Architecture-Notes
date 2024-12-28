@@ -302,6 +302,23 @@ Notes on the book Clean Architecture: A Craftsman's Guide to Software Structure 
 - Definition: Depend in the direction of stability
 - Some components are designed to be volatile. We expect them to change
 - Volatile components should not be depended on by components that are difficult to change. If they do, the volatile components will also be difficult to change
+- I = Fan-out / (Fan-in + Fan-out) where I is the component's instability, Fan-out is outgoing dependencies and Fan-in are incoming dependencies (I = 1 is as unstable as a component can get, irresponsible and dependent, and I = 0 is as stable as it can get, responsible and independent)
+- I metric should decrease in the direction of dependency. **A component should depend on components that are more stable than itself**
+
+### The Stable Abstractions Principle (SAP)
+- Definition: A component shoud be as abstract as it is stable
+- Software that encapsulates high-level policies of the system should be placed into stable components (I = 0)
+- Unstable components (I = 1) should contain only teh software that is volatile (easy to change)
+- However, if high-level policies are placed into stable components, they become hard to change and the architecture becomes inflexible
+- In order to have maximally stable (I = 0) components be flexible to withstand change we use the OCP (Open for extension)
+- **A stable component should also be abstract so that its stability does not prevent it from being extended**
+- **An unstable component should be concrete since its instability allows the concrete code within it to be easily changed**
+- A = Na / Nc where A is a component's abstractness, Nc is the number of classes in the component and Na is the number of abstract classes and interfaces in the component (A = 0 is no abstract classes and A = 1 is nothing but abstract classes)
+
+### Distance from the Main Sequence
+- The most desirable position for a component is at one of the two endpoints of the Main Sequence. Good architects strive to position the majority of their components at those endpoints
+- Components have the best characteristics (blend of abstract and stable) if they are on or close to the Main Sequence
+- D = |A + I - 1| where D is the distance from the Main Sequence. The range of the metric is [0-1]. 0 indicates directly on the Main Sequence. 1 indicates as far away as possible from the Main Sequence
 
 # <a name="architecture">15. Architecture</a> 
 - The primary purpose of architecture is to support the life cycle of the system
