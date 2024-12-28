@@ -43,7 +43,7 @@ Notes on the book Clean Architecture: A Craftsman's Guide to Software Structure 
 - Function or architecture? Which of these two provides the greater value?
 - The first value of software —behavior— is urgent but not always particularly important
 - The second value of software —architecture— is important but never particularly urgent
-- **Software priorities lie within these 4 points:**
+- **Software priorities lie within these 4 points:** (Eisenhower Matrix)
     * 1. Urgent and important
     * 2. Not urgent and important
     * 3. Urgent and not important
