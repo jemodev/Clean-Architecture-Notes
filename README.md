@@ -1,5 +1,5 @@
 # Clean Architecture
-My personal notes on the book Clean Architecture: A Craftsman's Guide to Software Structure and Design by Robert C. Martin
+Notes on the book Clean Architecture: A Craftsman's Guide to Software Structure and Design by Robert C. Martin
 
 
 # Index
